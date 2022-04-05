@@ -1,0 +1,30 @@
+#include<stdio.h>
+int checkleap(int y)
+{
+    int ly=0;
+    if(y%100==0&&y%400==0)
+    {
+        ly=1;
+    }
+    if(y%100!=0&&y%4==0)
+    {
+        ly=1;
+    }
+    return ly;
+}
+void main()
+{
+    int d,m,y,maxdays;
+    int mdays[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+    printf("enter the date:");
+    scanf("%d %d %d",&d,&m,&y);
+    if(checkleap(y))
+    {
+        mdays[2]=29;
+    }
+    maxdays=mdays[m];
+    if((d>=1&&d<=maxdays)&&(m>=1&&m<=12))
+    printf("valid");
+    else
+    printf("invalid");
+}

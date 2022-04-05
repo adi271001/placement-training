@@ -1,0 +1,13 @@
+#include<stdio.h>
+void main()
+{
+    int d,m,y,maxdays;
+    int mdays[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+    printf("enter the date:");
+    scanf("%d %d %d",&d,&m,&y);
+    maxdays=mdays[m];
+    if((d>=1&&d<=maxdays)&&(m>=1&&m<=12))
+    printf("valid");
+    else
+    printf("invalid");
+}

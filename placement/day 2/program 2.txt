@@ -1,0 +1,46 @@
+#include<stdio.h>
+void main()
+{
+    int mat[5][5],m,n,i,j;
+    int flag=1;
+    again:printf("enter the order of the matrix");
+    scanf("%d %d",&m,&n);
+    if(m!=n)
+    {
+        printf("enter the valid matrix");
+        goto again;
+    }
+    printf("enter the elements");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++);
+        
+        {
+            scanf("%d",&mat[i][j]);
+        }
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i==0&&mat[i][j]!=1)
+            {
+                flag=0;
+                break;
+            }
+            if(i!=j&&mat[i][j]!=0)
+            {
+                flag=0;
+                break;
+            }
+        }
+    }
+            if(flag)
+            {
+                printf("identity");
+            }
+            else
+            {
+                printf("not identity");
+            }
+}
